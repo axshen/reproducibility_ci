@@ -1,8 +1,6 @@
-language: generic
+language: minimal
 
 jobs:
   include:
     - name: python-lint
       script: pip3 install -y pycodestyle && pycodestyle sample_code/python
-    - name: cpp-lint
-    - name: c-lint
