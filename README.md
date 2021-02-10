@@ -6,4 +6,5 @@ A Travis CI definition file for code reproducibility which includes:
 
 ## Static linting
 
-See [pycodestyle](https://github.com/PyCQA/pycodestyle) for pip installable library to perform static pep8 checks on your code. This should be run prior to the creation of pull requests.
+* [pycodestyle](https://github.com/PyCQA/pycodestyle) for pip installable library to perform static pep8 checks on your code. This should be run prior to the creation of pull requests.
+* [cpplint](https://github.com/cpplint/cpplint) for c++ static linting.

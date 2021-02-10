@@ -40,11 +40,12 @@ def kamel_logs():
     body = stdout.decode("utf-8")
     return response(body)
 
+
 @app.route("/api/kamel/describe", methods=["GET"])
 @cross_origin()
 def kamel_describe():
     task = request.args.get('task')
-    stdout = subprocess.check_output(f"/usr/local/bin/kamel describe integration {task}", shell=True) # noqa
+    stdout = subprocess.check_output(f"/usr/local/bin/kamel describe integration {task}", shell=True)  # noqa
     body = stdout.decode("utf-8")
     return response(body)
 
