@@ -1,3 +1,6 @@
+"""! @brief  Separate function for deleting Kamel route.
+"""
+
 import os
 import paramiko
 

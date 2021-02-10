@@ -1,4 +1,5 @@
-"""! @brief  Define app functions."""
+"""! @brief  Define app functions.
+"""
 
 import os
 import time
@@ -34,8 +35,8 @@ def response(message):
 
     @param message  The content of the successful (200) HTTP response.
 
-    @return  Flask HTTP response object with content of message from the argument 
-    and status code 200.
+    @return  Flask HTTP response object with content of message from the
+    argument and status code 200.
     """
     res = Response(json.dumps(message))
     res.status_code = 200

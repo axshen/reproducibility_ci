@@ -1,5 +1,7 @@
 # Reproducibility CI
 
+[![Build Status](https://travis-ci.com/axshen/reproducibility_ci.svg?branch=main)](https://travis-ci.com/axshen/reproducibility_ci)
+
 A Travis CI definition file for code reproducibility which includes:
 
 - linting (python with [pep8](https://pep8.org/), c/c++ with [google styleguide](https://google.github.io/styleguide/cppguide.html))
