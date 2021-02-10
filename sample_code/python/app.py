@@ -1,3 +1,5 @@
+"""! @brief  Define app functions."""
+
 import os
 import time
 import json
@@ -13,6 +15,10 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 
 
 def create_client():
+    """! Create ssh client.
+
+    Create ssh client to run commands in host machine from inside container.
+    """
     hostname = "localhost"
     username = "she393"
     password = os.getenv("PASSWORD")
@@ -24,6 +30,13 @@ def create_client():
 
 
 def response(message):
+    """! Wrapper for HTTP responses.
+
+    @param message  The content of the successful (200) HTTP response.
+
+    @return  Flask HTTP response object with content of message from the argument 
+    and status code 200.
+    """
     res = Response(json.dumps(message))
     res.status_code = 200
     res.content_type = "application/json"
@@ -33,12 +46,20 @@ def response(message):
 @app.route("/")
 @cross_origin()
 def home():
+    """! HTTP route '/'
+
+    Returns 'OK' successful response to the user.
+    """
     return response("OK")
 
 
 @app.route("/api/tasks/", methods=["GET", "POST", "DELETE"])
 @cross_origin()
 def kamel_get():
+    """! HTTP route '/api/tasks/'
+
+    API endpoint for manipulating tasks. Allows GET, POST and DELETE requests.
+    """
     client = create_client()
     task_name = request.args.get('name')
 
@@ -85,6 +106,10 @@ def kamel_get():
 @app.route("/api/logs/tasks/", methods=["GET"])
 @cross_origin()
 def kamel_logs():
+    """! HTTP route '/api/logs/tasks/'
+
+    API endpoint for manipulating logs. Allows only GET requests.
+    """
     task_name = request.args.get('name')
     if task_name is None:
         return response("Need to specify task name!")
