@@ -6,7 +6,7 @@
 
 # Github Action Badges
 
-[![Build Status](https://github.com/axshen/reproducibility_ci/workflows/linting-test/badge.svg)](https://github.com/axshen/reproducibility_ci/actions)
+[![Build Status](https://github.com/axshen/reproducibility_ci/workflows/Linting/badge.svg)](https://github.com/axshen/reproducibility_ci/actions)
 
 A repository with CI scripts for code reproducibility including:
 
