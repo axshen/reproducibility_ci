@@ -2,7 +2,7 @@
 name: Documentation Coverage
 on: [push]
 jobs:
-  cpp-lint:
+  documentation-coverage:
     runs-on: ubuntu-latest
     steps:
       # Checkout repository   
