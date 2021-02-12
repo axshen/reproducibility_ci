@@ -1,8 +1,14 @@
 # Reproducibility CI
 
+# Travis CI Badges
+
 [![Build Status](https://travis-ci.com/axshen/reproducibility_ci.svg?branch=main)](https://travis-ci.com/axshen/reproducibility_ci)
 
-A Travis CI definition file for code reproducibility which includes:
+# Github Action Badges
+
+[![Build Status](https://github.com/axshen/reproducibility_ci/workflows/linting-test/badge.svg)](https://github.com/axshen/reproducibility_ci/actions)
+
+A repository with CI scripts for code reproducibility including:
 
 - linting (python with [pep8](https://pep8.org/), c/c++ with [google styleguide](https://google.github.io/styleguide/cppguide.html))
 
