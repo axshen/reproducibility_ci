@@ -9,8 +9,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Install dependencies, run Doxygen 
-      - run: apt-get update
-      - run: apt-get install -y jq lcov doxygen
+      - run: sudo apt-get update
+      - run: sudo apt-get install -y jq lcov doxygen
       - run: cd docs && doxygen Doxyfile && cd ..
 
       # Install python3 and coverxygen (coverage report)  
