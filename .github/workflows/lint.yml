@@ -16,16 +16,22 @@ jobs:
           key: ${{ runner.os }}-build-${{ env.cache-name }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}
-      - name: Install requirements
-        run: |
-          pip3 install cpplint
-      - name: C++ linter
-        run: cpplint --recursive sample_code/cpp 
+      - run: pip3 install cpplint
+      - run: cpplint --recursive sample_code/cpp 
   python-lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: apt-get update -y
-      - run: apt-get install -y python3 python3-pip
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8.0'
+          architecture: 'x64'
+      - name: Cache pip
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}
       - run: pip3 install pycodestyle
       - run: pycodestyle sample_code/python
