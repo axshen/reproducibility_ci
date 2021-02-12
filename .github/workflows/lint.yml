@@ -1,4 +1,4 @@
-name: linting-test
+name: Linting
 on: [push]
 jobs:
   cpp-lint:
