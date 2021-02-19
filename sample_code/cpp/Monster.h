@@ -1,11 +1,13 @@
-#ifndef MONSTER_H
-#define MONSTER_H
+// Copyright 2021 Austin Shen
+
+#ifndef SAMPLE_CODE_CPP_MONSTER_H_
+#define SAMPLE_CODE_CPP_MONSTER_H_
 
 #include "Creature.h"
 #include <array>
 
 class Monster : public Creature {
-public:
+ public:
     enum class Type {
         Dragon,
         Orc,
@@ -13,15 +15,15 @@ public:
         max_types
     };
 
-private:
+ private:
     static const Creature& getDefaultCreature(Type type);
 
-public:
-    Monster(Type type) : Creature(getDefaultCreature(type)) {
+ public:
+    explicit Monster(Type type) : Creature(getDefaultCreature(type)) {
         std::cout << "A wild " << m_name << " appeared!\n";
-    };
+    }
 
     static Monster getRandomMonster();
 };
 
-#endif 
+#endif  // SAMPLE_CODE_CPP_MONSTER_H_

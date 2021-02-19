@@ -1,6 +1,7 @@
 name: Linting
 on: [push]
 jobs:
+  # C++ code linting check 
   cpp-lint:
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +18,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}
       - run: pip3 install cpplint
-      - run: cpplint --recursive sample_code/cpp 
+      - run: cd sample_code/cpp && cpplint *
+  
+  # Python code linting check
   python-lint:
     runs-on: ubuntu-latest
     steps:

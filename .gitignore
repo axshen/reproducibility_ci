@@ -4,3 +4,4 @@ __pycache__
 docs/html
 docs/xml
 coverage-documentation.info
+.vscode

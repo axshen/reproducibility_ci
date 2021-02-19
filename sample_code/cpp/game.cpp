@@ -1,9 +1,11 @@
+// Copyright 2021 Austin Shen
+
 #include "Creature.h"
 #include "Player.h"
 #include "Monster.h"
-#include "utils.h"
 #include <iostream>
 #include <string>
+#include "./utils.h"
 
 Player getPlayer() {
     std::cout << "Enter your name: ";
@@ -13,7 +15,7 @@ Player getPlayer() {
     return player;
 }
 
-void attackMonster(Player& player, Monster& monster) {
+void attackMonster(const Player& player, const Monster& monster) {
     std::cout << "You attack the " << monster.getName()
         << ", inflicting " << player.getStrength() << " damage.\n";
     monster.reduceHealth(player.getStrength());
@@ -24,16 +26,16 @@ void attackMonster(Player& player, Monster& monster) {
         if (player.hasWon()) {
             std::cout << "You win the game!\n";
         }
-    };
-};
+    }
+}
 
-void attackPlayer(Player& player, const Monster& monster) {
+void attackPlayer(const Player& player, const Monster& monster) {
     std::cout << monster.getName() << " attacks and inflicts "
         << monster.getStrength() << " damage. Ouch!\n";
     player.reduceHealth(monster.getStrength());
-};
+}
 
-void fightMonster(Player& player, Monster& monster) {
+void fightMonster(const Player& player, const Monster& monster) {
     char action;
     bool escapedSuccessfully = false;
 
@@ -54,15 +56,14 @@ void fightMonster(Player& player, Monster& monster) {
                 attackPlayer(player, monster);
             }
         }
-    };
-};
+    }
+}
 
-int main()
-{
+int main() {
     // Initialise game
     Player player = getPlayer();
     std::cout << "\n* You enter this mysterious world... *\n";
-    
+
     // Gameplay
     while (!player.isDead() && !player.hasWon()) {
         std::cout << "\n* You walk around a bit. *\n\n";
@@ -75,7 +76,6 @@ int main()
             std::cout << "The game is over!\n";
             break;
         }
-    };
-
-	return 0;
+    }
+    return 0;
 }
