@@ -1,5 +1,3 @@
-// Copyright 2021 Austin Shen
-
 #include "Creature.h"
 
 void Creature::reduceHealth(int damage) {
@@ -13,3 +11,4 @@ bool Creature::isDead() const {
 void Creature::addGold(int amount) {
     m_gold += amount;
 }
+
