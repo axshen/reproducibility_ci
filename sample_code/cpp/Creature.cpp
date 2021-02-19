@@ -1,3 +1,5 @@
+// Copyright 2021 Austin Shen
+
 #include "Creature.h"
 
 void Creature::reduceHealth(int damage) {

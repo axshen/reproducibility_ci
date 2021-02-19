@@ -1,7 +1,7 @@
 // Copyright 2021 Austin Shen
 
-#ifndef CREATURE
-#define CREATURE
+#ifndef SAMPLE_CODE_CPP_CREATURE_H_
+#define SAMPLE_CODE_CPP_CREATURE_H_
 
 #include <iostream>
 #include <string>

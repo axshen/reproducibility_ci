@@ -2,7 +2,7 @@
 
 #include "Monster.h"
 #include <iostream>
-#include "utils.h"
+#include "sample_code/cpp/utils.h"
 
 const Creature& Monster::getDefaultCreature(Type type) {
     static std::array<Creature, static_cast<std::size_t>(Type::max_types)>
